@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string to_double_number(int i) {
+string to_two_digits(int i) {
 	if (i < 10) {
 		return "0" + to_string(i);
 	}
@@ -29,7 +29,7 @@ int main() {
 
 	for (int i = 0; i < max_days.length(); i++) {
 		int month = i + 1;
-		string str_month = to_double_number(month);
+		string str_month = to_two_digits(month);
 
 		int max_day;
 		if (max_days[i] == '0') max_day = 30;
@@ -38,7 +38,7 @@ int main() {
 
 		for (int j = 0; j < max_day; j++) {
 			int day = j + 1;
-			string str_day = to_double_number(day);
+			string str_day = to_two_digits(day);
 
 			if (is_prime(str_month + str_day)) {
 				result++;
